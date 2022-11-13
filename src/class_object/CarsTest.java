@@ -1,6 +1,8 @@
 package class_object;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 public class CarsTest {
     public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class CarsTest {
         cars.add(car4);
         cars.add(car5);
 
-        System.out.println("-------Print each car--------");
+        System.out.println("\n-------Print each car--------\n");
         cars.forEach(System.out::println);
 
         /*
@@ -51,17 +53,37 @@ public class CarsTest {
         }
         System.out.println("The are " + count + " black cars in the list");
 
-        System.out.println("------Count Black cars with stream()------");
+        System.out.println("\n------Count Black cars with stream()------\n");
 
         System.out.println("The are " + cars.stream().filter(car -> car.color.equals("Black")).count() +
                 " black cars in the list");
 
-        /*
-        Count all the cars that are Blue or Beige or 2023 -> Expected: 3
+        //Count all the cars that are Blue or Beige or 2023 -> Expected: 3
+        System.out.println("\n----Count Blue or Beige or 2023 cars with loop------\n");
 
-        Remove all the cars that are Tesla and print the size of the cars -> Expected: 3
-         */
+        count = 0;
+        for (Car car : cars) {
+            if(car.color.equals("Blue") || car.color.equals("Beige") || car.year == 2023) count++;
+        }
+        System.out.println("The are " + count + " blue or beige color or 2023 cars in the list");
 
+        System.out.println("\n----Count Blue or Beige or 2023 cars with stream()------\n");
+
+        System.out.println("The are " + cars.stream().filter(car -> car.color.equals("Blue") || car.color.equals("Beige") ||
+                car.year == 2023).count() + " blue or beige color or 2023 cars in the list");
+
+        //Remove all the cars that are Tesla and print the size of the cars -> Expected: 3
+
+        System.out.println("\n----Count cars that are not Tesla with stream()------\n");
+
+        System.out.println("There are " + cars.stream().filter(car -> !car.make.equals("Tesla")).count() +
+                " not Tesla cars.");
+
+
+        cars.removeIf(c -> c.make.equals("Tesla"));
+
+        cars.forEach(System.out::println);
+        System.out.println(cars.size());
 
     }
 }
