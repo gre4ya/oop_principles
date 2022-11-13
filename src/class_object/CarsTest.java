@@ -85,5 +85,15 @@ public class CarsTest {
         cars.forEach(System.out::println);
         System.out.println(cars.size());
 
+        /*
+        Iterator <Car>  teslaIterator =  cars.iterator();
+        while(teslaIterator.hasNext()){
+            Car c = teslaIterator.next();
+            if(c.made.equals("Tesla"))
+               teslaIterator.remove();
+        }
+        System.out.println(cars.size());
+         */
+
     }
 }
