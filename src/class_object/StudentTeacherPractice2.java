@@ -1,10 +1,15 @@
 package class_object;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class StudentTeacherPractice2 {
     public static void main(String[] args) {
+
+
+
         Teacher teacher = new Teacher("John", "Doe");
         List<Teacher> teachers = new ArrayList<>();
         teachers.add(teacher);
@@ -30,9 +35,4 @@ public class StudentTeacherPractice2 {
         System.out.println("The youngest student age is " + youngest);
         System.out.println("The difference between oldest and youngest students is " + (oldest - youngest));
     }
-
-
-
-
-
 }
