@@ -19,5 +19,6 @@ public class StudentTest {
         student1.rest(); // John Doe rests
         student2.rest(); // Jane Doe rests
 
+
     }
 }
