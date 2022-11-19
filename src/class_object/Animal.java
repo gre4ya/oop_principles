@@ -7,8 +7,12 @@ public class Animal {
     public boolean isCarnivore;
     public boolean isHerbivore;
     public boolean isOmnivore;
-
-
+    // execute the code below whenever an Animal object is garbage collected
+    // you wil; override finalize() method if yuo would like to execute a block of right after your object is destroyed
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println(getClass().getName() + " " + this.name + "An Animal object is destroyed");
+    }
 
     public static void main(String[] args) {
 //        Animal a1 = new Animal();
@@ -62,4 +66,6 @@ public class Animal {
 
         return result;
     }
+
+
 }
