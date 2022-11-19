@@ -37,14 +37,14 @@ public class Animal {
     public Animal(){}
 
     public Animal(String name, int age){
-        System.out.println("This is 2-arg constructor");
+       // System.out.println("This is 2-arg constructor");
         this.name = name;
         this.age = age;
     }
 
     public Animal(String name, int age, boolean isCarnivore, boolean isHerbivore, boolean isOmnivore) {
         this(name, age);
-        System.out.println("This is 5-arg constructor");
+        //System.out.println("This is 5-arg constructor");
         this.isCarnivore = isCarnivore;
         this.isHerbivore = isHerbivore;
         this.isOmnivore = isOmnivore;
