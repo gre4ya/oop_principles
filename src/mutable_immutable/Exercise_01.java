@@ -3,6 +3,7 @@ package mutable_immutable;
 public class Exercise_01 {
 
     public static void main(String[] args) {
+
         String str1 = "";
         String str2 = "a";
         String str3 = "aa";
@@ -10,7 +11,6 @@ public class Exercise_01 {
         String str5 = "aaaa";
         String str6 = "aaaaa";
         String str7 = "aaaaaa";
-
 
         System.out.println(insertAstrix(str1));
         System.out.println(insertAstrix(str2));
