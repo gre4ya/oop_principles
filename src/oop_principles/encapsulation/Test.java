@@ -5,7 +5,7 @@ public class Test {
 
         AccountHolder accountHolder = new AccountHolder();
 
-        accountHolder.firstName = "John";
+        //accountHolder.firstName = "John";
         accountHolder.lastName = "Doe";
         accountHolder.address = "Chicago";
         accountHolder.phoneNumber = "(312) 000-0000";
@@ -13,7 +13,11 @@ public class Test {
         accountHolder.setSSN("000-00-0000");
         accountHolder.setBalance(199.99);
 
-        System.out.println(accountHolder.firstName);
+
+        accountHolder.setFirstName("John", "1234");
+        System.out.println(accountHolder.getFirstName("5555"));
+
+        //System.out.println(accountHolder.firstName);
         System.out.println(accountHolder.getSSN()); // 000-00-0000
         System.out.println(accountHolder.getBalance()); // 199.99
         System.out.println(accountHolder);
