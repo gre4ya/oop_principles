@@ -35,7 +35,7 @@ public class EmployeeClub {
         int totalAppleEmployee = 0;
 
         for (Employee employee : employees) {
-            if(employee.getCompany().getName().equals("Apple")) totalAppleEmployee++;
+            if (employee.getCompany().getName().equals("Apple")) totalAppleEmployee++;
         }
         System.out.println("Employees for Apple is = " + totalAppleEmployee);
 
@@ -66,14 +66,14 @@ public class EmployeeClub {
 //        }
 
         Employee oldestMicrosoftDev = Arrays.stream(employees).filter(
-                         e -> e.getCompany().getName().equals("Microsoft") &&
-                         e.getJobPosition().equals("Developer")).max(Comparator.comparingInt(Employee::getAge)).get();
+                e -> e.getCompany().getName().equals("Microsoft") &&
+                        e.getJobPosition().equals("Developer")).max(Comparator.comparingInt(Employee::getAge)).get();
 
 
         System.out.println(oldestMicrosoftDev.getFullName().split(" ")[0] +
-                                " is the oldest " + oldestMicrosoftDev.getJobPosition() +
-                                " working for " + oldestMicrosoftDev.getCompany().getName() +
-                                " with the age = " + oldestMicrosoftDev.getAge());
+                " is the oldest " + oldestMicrosoftDev.getJobPosition() +
+                " working for " + oldestMicrosoftDev.getCompany().getName() +
+                " with the age = " + oldestMicrosoftDev.getAge());
 
     }
 
