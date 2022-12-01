@@ -1,5 +1,8 @@
 package oop_principles.inheritance;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class TesterClub {
     public static void main(String[] args) {
 
@@ -17,18 +20,22 @@ public class TesterClub {
         Average age = 33
          */
 
-        int manual = 0, automation = 0, averageAge = 0;
+        int manual = 0, automation = 0, sumAge = 0;
 
         for (Tester tester : testers) {
-            if(!tester.isAutomationTester) manual++;
+            if (!tester.isAutomationTester) manual++;
             else automation++;
-            averageAge += tester.age;
+            sumAge += tester.age;
         }
-        averageAge = averageAge / testers.length;
 
         System.out.println("Manual testers = " + manual);
         System.out.println("Automation testers = " + automation);
-        System.out.println("Average age = " + averageAge);
+        System.out.println("Average age = " + sumAge / testers.length);
+
+        // count with stream()
+        System.out.println("Manual testers = " + Arrays.stream(testers).filter(t -> t.isAutomationTester).count());
+        System.out.println("Automation testers = " + Arrays.stream(testers).filter(t -> !t.isAutomationTester).count());
+        // System.out.println("Average age = " + Arrays.stream(testers).filter(t. -> t.age) / testers.length);
 
     }
 }
