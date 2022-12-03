@@ -16,8 +16,8 @@ public class Animal {
         this(name, age, height, weight, diet);
         this.isAlive = isAlive;
         this.isExtinct = isExtinct;
-
     }
+
 
     public String name;
     public int age;
@@ -26,6 +26,18 @@ public class Animal {
     public String diet;
     public boolean isAlive;
     public boolean isExtinct;
+    private String gender;
+
+    public String getGender(String password) {
+        if ("12345".equals(password)) {
+            return gender;
+        }
+        return "Your password is wrong";
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public void eat(String food){
         switch (food){
@@ -98,6 +110,7 @@ public class Animal {
 //        animal.breath("Lungs");
 
         animal.attack();
-
+        animal.setGender("Male");
+        System.out.println(animal.getGender("12345"));
     }
 }

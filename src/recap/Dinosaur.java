@@ -18,22 +18,49 @@ public class Dinosaur extends Animal{
 
     @Override
     public double attack() {
+
         double damage = weight * height;
-        switch (size) {
-            case "normal":
-                System.out.println(name + " is attacking. It damaged \"" + damage + "\"");
-                break;
+        switch (size.toLowerCase()) {
             case "big":
                 damage *= 3;
-                System.out.println(name + " is attacking. It damaged \"" + damage + "\"");
                 break;
             case "giant":
                 damage *= 10;
-                System.out.println(name + " is attacking. It damaged \"" + damage + "\"");
                 break;
         }
-        if(hasSpike) System.out.println("Animal had spikes, the attack was critical");
-        else System.out.println("Animal didn't have spikes, the attack was not critical");
+        System.out.println(name + " is attacking. It damaged \"" + damage + "\"" +
+                "\n" + (hasSpike ? "Animal had spikes, the attack was critical" : "Animal didn't have spikes, the attack was not critical"));
+
+        return damage;
+    }
+
+    public double attack(String mood) {
+        double damage = weight * height;
+        switch (size.toLowerCase()) {
+            case "big":
+                damage *= 3;
+                break;
+            case "giant":
+                damage *= 10;
+                break;
+        }
+
+        switch (mood.toLowerCase()){
+            case "chill":
+            case "calm":
+            case "happy":
+                System.out.println(name + " is in a good mood attacks less!");
+                damage /= 2;
+                break;
+            case "angry":
+            case "hungry":
+                System.out.println(name + " is in a bad mood attacks more!");
+                damage *= 2;
+                break;
+        }
+        System.out.println(name + " is attacking. It damaged \"" + damage + "\"" +
+                "\n" + (hasSpike ? "Animal had spikes, the attack was critical" : "Animal didn't have spikes, the attack was not critical"));
+
         return damage;
     }
 
@@ -54,10 +81,8 @@ public class Dinosaur extends Animal{
 
     public static void main(String[] args) {
         Dinosaur dinosaur = new Dinosaur("T-Rex", 6, 8.9, 500.3, "carnivore", false, true, "big", true);
-        System.out.println(dinosaur);
-        dinosaur.attack();
-
-
-
+        dinosaur.attack("angry");
+        dinosaur.setGender("Female");
+        System.out.println(dinosaur.getGender("12345"));
     }
 }
