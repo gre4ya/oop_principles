@@ -7,7 +7,7 @@ public class TestAbstraction {
         s1.call();
         s1.text();
 
-        Samsung s2 = new Samsung(64, "Galaxy sS0", "Black", 700);
+        Samsung s2 = new Samsung(64, "Galaxy s20", "Black", 700);
 
 
         iPhone i1 = new iPhone();
@@ -19,5 +19,11 @@ public class TestAbstraction {
         System.out.println(i2);
         System.out.println(s2);
 
+        s2.recordVideos();
+
+
+        Nokia n1 = new Nokia(128, "N9", "Black", 799);
+        System.out.println(n1);
+        i1.connectToWiFi();
     }
 }
